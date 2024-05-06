@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    
+<style>
+    body {
+        background: rgb(148, 95, 108);
+        height: 3000px;
+        font-family: 'Batang';
+        font-size: small;
+    }
+    div {
+        margin-top: 300px;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transition: all 1s;
+    }
+    p {
+        margin-top: 300px;
+        color: rgb(184, 152, 152);
+        text-align: center;
+    }
+    button {
+        width:200px;
+        height:200px;
+        cursor: pointer;
+        border-radius: 100px;
+        background-color: pink;
+        border: #915777;
+    }
+    .button:active {
+        transform: scale(0.9);
+        background-color: pink;
+        border: none;
+    }
+    .divout {
+        background: pink;
+        box-shadow: 0px 0px 10px 5px pink;
+        border-radius: 100px;
+    }
+    img {
+        margin: auto;
+    }
+</style>
+
+<div><h1>어버이 어버이 우리 어버이</h1></div>
+<p>*</p>
+<div><h1>이 카네이션</h1></div>
+<p>*</p>
+<div><h1>어버이께 드려요</h1></div>
+<p>*</p>
+<div><h1>어버이 손에 드려요</h1></div>
+<p><br><br><br><br><br><br><br></p>
+
+<div class="center">
+<button class="button" onclick="alert('❤️사랑해요💐')">
+    <img class="divout" src="https://i.pinimg.com/564x/e9/ba/46/e9ba46dcdc05eb013b24e6efcd1e74d9.jpg" width="200" height="200" >
+</button>
+</div>
+
+<script>
+
+    let observer = new IntersectionObserver((e)=>{
+        e.forEach((박스)=>{
+            if (박스.isIntersecting){
+              박스.target.style.opacity = 1;
+            } else{
+              박스.target.style.opacity = 0;
+            }
+            박스.intersectionRatio  
+        })
+    })
+
+    let div = document.querySelectorAll('div')
+    observer.observe(div[0])
+    observer.observe(div[1])
+    observer.observe(div[2])
+    observer.observe(div[3])
+    observer.observe(div[4])
+
+</script>
+
+</body>
+</html>
